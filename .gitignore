@@ -1,0 +1,23 @@
+@"
+# Virtual environments
+venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+build/
+dist/
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+thumbs.db
+"@ > .gitignore

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Healthcare Translator — Prototype (Free)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Roboto, "Segoe UI", sans-serif; margin: 0; padding: 1rem; background:#f7f7fb; color:#111; }
+    .card { background: white; border-radius: 12px; padding: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,0.06); max-width:740px; margin: 0 auto; }
+    h1 { font-size: 1.25rem; margin: 0 0 0.5rem 0; }
+    .row { display:flex; gap: .5rem; margin-bottom:.75rem; flex-wrap:wrap; align-items:center; }
+    select, button, input { padding:.6rem; border-radius:8px; border:1px solid #ddd; font-size:1rem; }
+    textarea { width:100%; min-height:100px; padding:.6rem; border-radius:8px; border:1px solid #ddd; font-size:1rem; resize:vertical; }
+    .transcripts { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; margin-top:.75rem; }
+    .panel { padding:.6rem; border-radius:8px; border:1px solid #eee; background:#fafafa; min-height:120px; }
+    .actions { display:flex; gap:.5rem; }
+    @media (max-width:640px){ .transcripts { grid-template-columns:1fr; } }
+    .small { font-size: .85rem; color:#666; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Healthcare Translation — Prototype (Free)</h1>
+
+    <div class="row">
+      <label>
+        From:
+        <select id="sourceLang">
+          <option value="auto">Auto</option>
+          <option value="en" selected>English</option>
+          <option value="es">Spanish</option>
+          <option value="hi">Hindi</option>
+          <option value="ta">Tamil</option>
+        </select>
+      </label>
+
+      <label>
+        To:
+        <select id="targetLang">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="hi">Hindi</option>
+          <option value="ta" selected>Tamil</option>
+        </select>
+      </label>
+
+      <div style="flex:1"></div>
+      <div class="actions">
+        <button id="startRec">🎤 Start</button>
+        <button id="stopRec" disabled>⏹ Stop</button>
+        <button id="playTrans" disabled>🔊 Speak</button>
+      </div>
+    </div>
+
+    <div>
+      <label>Live Transcript</label>
+      <textarea id="orig" placeholder="Speech -> transcript appears here..." readonly></textarea>
+    </div>
+
+    <div style="margin-top:.5rem;">
+      <label>Translated</label>
+      <div class="panel" id="translated">Translation appears here...</div>
+    </div>
+
+    <div style="margin-top:.5rem;" class="small">
+      Tip: Use Chrome on desktop or mobile for the built-in Web Speech API. Avoid real patient PHI in recordings.
+    </div>
+  </div>
+
+  <script>
+    // small safety: languages list pulled from server could be used to populate dropdowns
+  </script>
+  <script src="/static/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Flask==2.2.5
+python-dotenv==1.0.0
+requests==2.31.0
+
+# Optional / recommended for generative AI translation locally:
+transformers>=4.30.0
+sentencepiece>=0.1.99
+torch>=2.0.0   # optional; heavy
+
+# Fallback translator (no key)
+googletrans==4.0.0-rc1
+
+# For deploying with gunicorn
+gunicorn==21.2.0
